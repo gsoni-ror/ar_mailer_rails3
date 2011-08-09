@@ -1,36 +1,25 @@
 = ar_mailer_rails3
 
-A two-phase delivery agent for ActionMailer which works for Rails 3.
+A two-phase delivery agent for ActionMailer which works for Rails 3 with feature for setting mail priority.
 
-Forked from http://github.com/adzap/ar_mailer/
-
-Rubyforge Project:
-
-http://rubyforge.org/projects/seattlerb
-
-Documentation:
-
-http://seattlerb.org/ar_mailer
+https://github.com/yzhang/ar_mailer_rails3
 
 and for forked additions
 
-http://github.com/yzhang/ar_mailer_rails3/wikis
+https://github.com/gsoni-ror/ar_mailer_rails3/wikis
 
-Bugs:
-
-http://github.com/yzhang/ar_mailer_rails3/issues
 
 == About
 
 Even delivering email to the local machine may take too long when you have to
 send hundreds of messages.  ar_mailer allows you to store messages into the
-database for later delivery by a separate process, ar_sendmail.
+database for later delivery by a separate process, ar_sendmail. Now also allows to set priorities to the mails or skip mail from getting into the queue if required.
 
 == Installing ar_mailer_rails3
 
 Don't need remove adzap-ar_mailer or ar_mailer, just install ar_mailer_rails3
 
-$ sudo gem install ar_mailer_rails3
+$ sudo gem install gsoni-ar_mailer_rails3
 
 == Usage
 
@@ -60,6 +49,16 @@ Something like:
   def list_send(recipient)
     from 'no_reply@example.com'
     # ...
+
+And if you want to set the mail priority, add request level variable @priority Something like:
+
+def list_send(recipient)
+  @priority = 5
+  # ...
+
+@priority could be any number, ar_mailer sort mails on priority and send it in the desc order.
+
+Just in case you want to skip any mail from getting into the queue[for Urgent mails], you can assign @priority = -1 :)
 
 Edit config/initializer/ar_mailer_rails3.rb and uncomment below line to use ar_mailer as
 default delivery method:
