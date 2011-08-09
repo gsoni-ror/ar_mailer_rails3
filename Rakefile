@@ -4,12 +4,12 @@ require 'rake/testtask'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
-    s.name = "ar_mailer_rails3"
-    s.summary = "ArMailer wrapper for Rails 3"
-    s.email = "zhangyuanyi@gmail.com"
-    s.homepage = "http://github.com/yzhang/ar_mailer_rails3"
-    s.description = "ArMailer wrapper for Rails 3"
-    s.authors = ["Yuanyi Zhang"]
+    s.name = "gsoni-ar_mailer_rails3"
+    s.summary = "ArMailer wrapper for Rails 3 with mail priority"
+    s.email = "raveformails@gmail.com"
+    s.homepage = "https://github.com/gsoni-ror/ar_mailer_rails3"
+    s.description = "ArMailer wrapper for Rails 3 with mail priority"
+    s.authors = ["Gaurav Soni"]
     s.files =  FileList["[A-Z]*", "bin/*", "share/*", "test/*", "{lib}/**/*", '.gitignore']
     s.test_files = []
   end

@@ -43,10 +43,16 @@ module ArMailerRails3
     attr_accessor :email_class_name, :email_class
     
     def deliver!(mail)
+      require "action_mailer/ar_sendmail"
       destinations = mail.destinations
       sender = mail.return_path || mail.sender || mail.from_addrs.first
       destinations.each do |destination|
-        self.email_class.create :mail => mail.encoded, :to => destination, :from => sender
+        m = self.email_class.create :mail => mail.encoded, :to => destination, :from => sender, :priority => (@priority.present? ? @priority : 3)
+        if m.priority==-1
+          sendmail = ArMailerRails3::ARSendmail.new
+          sendmail.deliver([m])
+          m.destroy
+        end
       end
     end
   end

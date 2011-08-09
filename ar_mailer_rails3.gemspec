@@ -4,15 +4,15 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{ar_mailer_rails3}
-  s.version = "2.1.11"
+  s.name = %q{gsoni-ar_mailer_rails3}
+  s.version = "2.1.12"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Yuanyi Zhang"]
+  s.authors = ["Gaurav Soni"]
   s.date = %q{2011-03-21}
   s.default_executable = %q{ar_sendmail_rails3}
-  s.description = %q{ArMailer wrapper for Rails 3}
-  s.email = %q{zhangyuanyi@gmail.com}
+  s.description = %q{ArMailer wrapper for Rails 3 with mail priority}
+  s.email = %q{raveformails@gmail.com}
   s.executables = ["ar_sendmail_rails3"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -38,11 +38,11 @@ Gem::Specification.new do |s|
      "test/test_arsendmail.rb",
      "test/test_helper.rb"
   ]
-  s.homepage = %q{http://github.com/yzhang/ar_mailer_rails3}
+  s.homepage = %q{https://github.com/gsoni-ror/ar_mailer_rails3}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{ArMailer wrapper for Rails 3}
+  s.summary = %q{ArMailer wrapper for Rails 3 with mail priority}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
